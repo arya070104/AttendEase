@@ -52,7 +52,6 @@ ThemeData _lightTheme() {
   );
 }
 
-// WhatsApp Dark Theme
 ThemeData _darkTheme() {
   return ThemeData(
     primaryColor: Color(0xFF128C7E), // WhatsApp Dark Green
