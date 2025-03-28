@@ -4,6 +4,7 @@ import 'screens/qr_generator_screen.dart';
 import 'screens/qr_scanner_screen.dart';
 import 'screens/attendance_records_screen.dart';
 import 'screens/profile_screen.dart';
+import 'screens/login_screen.dart';
 
 void main() {
   runApp(AttendEaseApp());
@@ -29,7 +30,13 @@ class _AttendEaseAppState extends State<AttendEaseApp> {
       debugShowCheckedModeBanner: false,
       title: 'AttendEase',
       theme: _isDarkMode ? _darkTheme() : _lightTheme(),
-      home: MainScreen(toggleTheme: toggleTheme, isDarkMode: _isDarkMode),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => LoginScreen(), // Initial route set to LoginScreen
+        '/home':
+            (context) =>
+                MainScreen(toggleTheme: toggleTheme, isDarkMode: _isDarkMode),
+      },
     );
   }
 }
@@ -52,6 +59,7 @@ ThemeData _lightTheme() {
   );
 }
 
+// WhatsApp Dark Theme
 ThemeData _darkTheme() {
   return ThemeData(
     primaryColor: Color(0xFF128C7E), // WhatsApp Dark Green
