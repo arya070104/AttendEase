@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/welcome_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/qr_generator_screen.dart';
 import 'screens/qr_scanner_screen.dart';
@@ -32,7 +33,8 @@ class _AttendEaseAppState extends State<AttendEaseApp> {
       theme: _isDarkMode ? _darkTheme() : _lightTheme(),
       initialRoute: '/',
       routes: {
-        '/': (context) => LoginScreen(), // Initial route set to LoginScreen
+        '/': (context) => WelcomeScreen(), // Initial route set to WelcomeScreen
+        '/login': (context) => LoginScreen(),
         '/home':
             (context) =>
                 MainScreen(toggleTheme: toggleTheme, isDarkMode: _isDarkMode),
@@ -70,7 +72,7 @@ ThemeData _darkTheme() {
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Color(0xFF121212),
-      selectedItemColor: Color(0xFF25D366), // WhatsApp Light Green
+      selectedItemColor: Color(0xFF25D366),
       unselectedItemColor: Colors.grey,
     ),
     textTheme: TextTheme(bodyLarge: TextStyle(color: Colors.white)),
