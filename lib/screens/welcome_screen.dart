@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF075E54), // WhatsApp Green
+      backgroundColor: const Color(0xFF075E54), // WhatsApp Green
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'Welcome to AttendEase',
               style: TextStyle(
                 fontSize: 32,
@@ -18,36 +20,53 @@ class WelcomeScreen extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 30),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, '/login');
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF25D366), // WhatsApp Light Green
-                padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-              ),
-              child: Text(
-                'Login',
-                style: TextStyle(fontSize: 18, color: Colors.white),
-              ),
+            const SizedBox(height: 30),
+
+            // 🔹 Login as Student
+            _buildButton(
+              text: 'Login as Student',
+              color: const Color(0xFF25D366),
+              onPressed: () => Navigator.pushReplacementNamed(context, '/studentLogin'),
             ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, '/signup');
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF128C7E), // WhatsApp Dark Green
-                padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-              ),
-              child: Text(
-                'Sign Up',
-                style: TextStyle(fontSize: 18, color: Colors.white),
-              ),
+
+            const SizedBox(height: 20),
+
+            // 🔹 Login as Teacher
+            _buildButton(
+              text: 'Login as Teacher',
+              color: const Color(0xFF128C7E),
+              onPressed: () => Navigator.pushReplacementNamed(context, '/teacherLogin'),
+            ),
+
+            const SizedBox(height: 20),
+
+            // 🔹 Sign Up
+            _buildButton(
+              text: 'Sign Up',
+              color: const Color(0xFF128C7E),
+              onPressed: () => Navigator.pushReplacementNamed(context, '/signup'),
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  // 🔹 Reusable Button Widget
+  Widget _buildButton({
+    required String text,
+    required Color color,
+    required VoidCallback onPressed,
+  }) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: color,
+        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+      ),
+      child: Text(
+        text,
+        style: const TextStyle(fontSize: 18, color: Colors.white),
       ),
     );
   }

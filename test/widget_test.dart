@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   testWidgets('App loads successfully', (WidgetTester tester) async {
-    await tester.pumpWidget(AttendEaseApp());
+    await tester.pumpWidget(const AttendEaseApp(isDarkMode: false)); // ✅ Fixed null issue
     expect(find.byType(MaterialApp), findsOneWidget);
   });
 }

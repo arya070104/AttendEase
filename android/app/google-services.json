@@ -12,7 +12,20 @@
           "package_name": "com.example.attendease"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "599374891802-nr0lkhsatc0rq6b4votbf7vff3265kha.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.attendease",
+            "certificate_hash": "1632723ab331e058b6c15c8fb12597884d65bf76"
+          }
+        },
+        {
+          "client_id": "599374891802-63r81fjhpq03uq7rgbkjigf0a3dfn8d0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBKfikt2ae5eklkR5yiOlUvYlFNpoziFwU"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599374891802-63r81fjhpq03uq7rgbkjigf0a3dfn8d0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "599374891802-ean8lnhn6elrtgmcgf9bmrfdb7b0ctik.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.attendease"
+              }
+            }
+          ]
         }
       }
     }
